@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include <string.h>
 #include "todolib.h"
 
-int main()
+int 
+main()
 {
     char path[MAX_PATH_SIZE];
     setChorePath(path);

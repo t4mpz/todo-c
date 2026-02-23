@@ -21,24 +21,35 @@ typedef struct Chore
 	Status status;
 } Chore;
 
-void writeChores(FILE *choreList, Chore *chores);
+void 
+writeChores (FILE* choreList, Chore* chores);
 
-int readChores(FILE *choreList, Chore *chores);
+int 
+readChores (FILE* choreList, Chore* chores);
 
-void removeChore(Chore *chores, int *lastAlloc, int chore);
+void 
+removeChore (Chore* chores, int* lastAlloc, int chore);
 
-void resetChores(Chore *chores, int *lastAlloc);
+void 
+resetChores (Chore* chores, int* lastAlloc);
 
-int lastChore(Chore *chores);
+int 
+lastChore (Chore* chores);
 
-void addChore(Chore *chores, Chore chore, int *lastAlloc);
+void 
+addChore (Chore* chores, Chore chore, int* lastAlloc);
 
-char *statusToString(Status status);
+char*
+statusToString (Status status);
 
-Status stringToStatus(char *status);
+Status 
+stringToStatus (char* status);
 
-void choreToString(Chore chore, char *output);
+void 
+choreToString (Chore chore, char* output);
 
-void printChore(Chore chore);
+void 
+printChore (Chore chore);
 
-void setChorePath(char *path);
+void 
+setChorePath (char* path);

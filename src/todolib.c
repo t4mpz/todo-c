@@ -5,7 +5,8 @@
 
 #include "todolib.h"
 
-void writeChores(FILE *choreList, Chore *chores)
+void 
+writeChores (FILE *choreList, Chore *chores)
 {
 	size_t result = fwrite(chores, sizeof(Chore), MAX_CHORES, choreList);
 	if (result != MAX_CHORES)
@@ -16,7 +17,8 @@ void writeChores(FILE *choreList, Chore *chores)
 	return;
 }
 
-int readChores(FILE *choreList, Chore *chores)
+int 
+readChores (FILE *choreList, Chore *chores)
 {
 	int lastAlloc = 0;
 	resetChores(chores, &lastAlloc);
@@ -29,7 +31,8 @@ int readChores(FILE *choreList, Chore *chores)
 	return lastChore(chores);
 }
 
-void removeChore(Chore *chores, int *lastAlloc, int chore)
+void 
+removeChore (Chore *chores, int *lastAlloc, int chore)
 {
 	if (chore >= MAX_CHORES - 1)
 	{
@@ -53,7 +56,8 @@ void removeChore(Chore *chores, int *lastAlloc, int chore)
 	return;
 }
 
-void resetChores(Chore *chores, int *lastAlloc)
+void 
+resetChores (Chore *chores, int *lastAlloc)
 {
 	int counter = 0;
 	for (Chore *chore = chores; counter < MAX_CHORES; chore++)
@@ -67,7 +71,8 @@ void resetChores(Chore *chores, int *lastAlloc)
 	return;
 }
 
-int lastChore(Chore *chores)
+int 
+lastChore (Chore *chores)
 {
 	int counter = 0;
 	for (Chore *chore = chores; counter < MAX_CHORES && chore->status != NALLOC; ++chore)
@@ -79,7 +84,8 @@ int lastChore(Chore *chores)
 	return counter;
 }
 
-void addChore(Chore *chores, Chore chore, int *lastAlloc)
+void 
+addChore (Chore *chores, Chore chore, int *lastAlloc)
 {
 	if (*lastAlloc >= MAX_CHORES)
 	{
@@ -91,7 +97,7 @@ void addChore(Chore *chores, Chore chore, int *lastAlloc)
 }
 
 char *
-statusToString(Status status)
+statusToString (Status status)
 {
 	switch (status)
 	{
@@ -107,7 +113,8 @@ statusToString(Status status)
 	}
 }
 
-Status stringToStatus(char *status)
+Status 
+stringToStatus (char *status)
 {
 	if (strcasecmp(status, "todo") == 0)
 	{
@@ -124,7 +131,8 @@ Status stringToStatus(char *status)
 	}
 }
 
-void choreToString(Chore chore, char *output)
+void 
+choreToString (Chore chore, char *output)
 {
 	sprintf(output, "%s\n%s\n%s\n",
 			chore.title,
@@ -132,7 +140,8 @@ void choreToString(Chore chore, char *output)
 			statusToString(chore.status));
 }
 
-void printChore(Chore chore)
+void 
+printChore (Chore chore)
 {
 	printf("%s\n%s\n%s\n",
 		   chore.title,
@@ -140,7 +149,8 @@ void printChore(Chore chore)
 		   statusToString(chore.status));
 }
 
-void setChorePath(char *path)
+void 
+setChorePath (char *path)
 {
 	const char *envPath = getenv("CHORE_PATH");
 	if (envPath != NULL && strlen(envPath) < MAX_PATH_SIZE)

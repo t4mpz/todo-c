@@ -17,7 +17,6 @@ default:
 	gcc $(GCC_FLAGS) $(EXEC_FLAGS) $(LIB) $(SOURCE_DIR)/todoUpdate.c -o $(OUT_DIR)/todoUpdate
 lib:
 	gcc $(GCC_FLAGS) -fsyntax-only $(LIB)
-
 todo:
 	$(OUT_DIR)/todo
 todoAdd:

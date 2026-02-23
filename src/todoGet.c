@@ -2,7 +2,8 @@
 #include <string.h>
 #include "todolib.h"
 
-int main(int argc, char **argv)
+int 
+main (int argc, char **argv)
 {
     char path[MAX_PATH_SIZE];
     setChorePath(path);
