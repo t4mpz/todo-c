@@ -1,4 +1,4 @@
-GCC_FLAGS= -Wall -Wextra
+GCC_FLAGS= -Wall -Wextra -Wpedantic -std=c99
 EXEC_FLAGS= -O2
 
 SOURCE_DIR=./src
