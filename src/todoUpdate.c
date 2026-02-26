@@ -40,7 +40,6 @@ main (int argc, char **argv)
         return 1;
     }
 
-
     int updateFlagCount = strlen(argv[2]);
     if (updateFlagCount > 4 || updateFlagCount == 0)
     {
@@ -50,12 +49,13 @@ main (int argc, char **argv)
     char updateFlags[5] = "";
     strcpy(updateFlags, argv[2]);
     if (updateFlags[0] == '-') {
-	    strcpy(updateFlags, &updateFlags[1]);
+        strcpy(updateFlags, &updateFlags[1]);
     }
     updateFlagCount = strlen(updateFlags);
-    if (updateFlagCount == 0) {
-	    printf("Invalid argument %s for status in update\n", argv[2]);
-	    exit(1);
+    if (updateFlagCount == 0)
+    {
+        printf("Invalid argument %s for status in update\n", argv[2]);
+        return 1;
     }
     if (updateFlagCount + 2 >= argc)
     {
@@ -64,7 +64,6 @@ main (int argc, char **argv)
         return 1;
     }
 
-    // TODO: handle multiple word titles and descriptions
     char title[MAX_TEXT_SIZE];
     strcpy(title, chores[chore].title);
 
