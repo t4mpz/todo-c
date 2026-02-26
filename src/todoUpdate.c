@@ -2,8 +2,7 @@
 #include <string.h>
 #include "todolib.h"
 
-int 
-main (int argc, char **argv)
+int main(int argc, char **argv)
 {
     char path[MAX_PATH_SIZE];
     setChorePath(path);
@@ -48,7 +47,8 @@ main (int argc, char **argv)
     }
     char updateFlags[5] = "";
     strcpy(updateFlags, argv[2]);
-    if (updateFlags[0] == '-') {
+    if (updateFlags[0] == '-')
+    {
         strcpy(updateFlags, &updateFlags[1]);
     }
     updateFlagCount = strlen(updateFlags);
