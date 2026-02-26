@@ -144,9 +144,9 @@ void
 printChore (Chore chore)
 {
 	printf("%s\n%s\n%s\n",
-		   chore.title,
-		   chore.description,
-		   statusToString(chore.status));
+			chore.title,
+			chore.description,
+			statusToString(chore.status));
 }
 
 void 

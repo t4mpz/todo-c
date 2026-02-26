@@ -27,7 +27,6 @@ main (int argc, char **argv)
 
     int lastAlloc = lastChore(chores);
 
-    // TODO: handle multiple word titles and descriptions
     Chore chore;
     strcpy(chore.title, argv[1]);
     strcpy(chore.description, argv[2]);
