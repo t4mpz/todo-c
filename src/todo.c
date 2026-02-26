@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int 
-main()
+main ()
 {
 	printf("Help for todo commands\n");
 	printf("Options:\n");
